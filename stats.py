@@ -1,10 +1,16 @@
-def count_words(book):
+#******************************
+# Function: get_word_count
+#******************************
+def get_word_count(book):
     words = book.split()
     num_words = len(words)
 
-    print(f"{num_words} words found in the document")
+    return num_words
 
-def count_chars(book):
+#******************************
+# Function: get_char_counts
+#******************************
+def get_char_counts(book):
     char_counts  = {}
     
     for c in book:
@@ -15,4 +21,4 @@ def count_chars(book):
         else:
             char_counts[c] = 1
 
-    print(char_counts)
+    return char_counts

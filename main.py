@@ -1,18 +1,27 @@
-from stats import count_words
-from stats import count_chars
+from stats import get_word_count
+from stats import get_char_counts
 
-def get_book_text(book):
+#******************************
+# Function: load_book
+#******************************
+def load_book(file):
     
-    with open(book) as b:
-        book_contents = b.read()
+    with open(file) as f:
+        book = f.read()
     
-    return book_contents
+    return book
 
+#******************************
+# Function: main
+#******************************
 def main ():
 
-    text = get_book_text("./books/frankenstein.txt")
+    book = load_book("./books/frankenstein.txt")
 
-    count_words(text)
-    count_chars(text)
+    words = get_word_count(book)
+    chars = get_char_counts(book)
+
+    print(f"{words} words found in the document")
+    print(chars)
 
 main()
